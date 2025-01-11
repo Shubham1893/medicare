@@ -24,11 +24,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/features">Features</NavLink>
+            <NavLink to="#features">Features</NavLink>
+            <NavLink to="#how-it-works">How It Works</NavLink>
+            <NavLink to="#connect">Connect</NavLink>
+            <NavLink to="#contact">Contact</NavLink>
             <NavLink to="/patient-records">Patient Records</NavLink>
             <NavLink to="/upload-report">Upload Report</NavLink>
-            <NavLink to="/about">About Us</NavLink>
-            <NavLink to="/contact">Contact Us</NavLink>
           </nav>
           
           {/* Desktop Auth Buttons */}
@@ -67,11 +68,12 @@ export default function Header() {
       >
         <div className="px-4 pt-2 pb-3 space-y-1">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/features">Features</NavLink>
+          <NavLink to="#features">Features</NavLink>
+          <NavLink to="#how-it-works">How It Works</NavLink>
+          <NavLink to="#connect">Connect</NavLink>
+          <NavLink to="#contact">Contact</NavLink>
           <NavLink to="/patient-records">Patient Records</NavLink>
           <NavLink to="/upload-report">Upload Report</NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
         </div>
         <div className="px-4 py-3 border-t border-gray-100 flex flex-col space-y-2">
           <Link

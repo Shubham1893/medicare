@@ -8,14 +8,26 @@ interface NavLinkProps {
 
 export default function NavLink({ to, children }: NavLinkProps) {
   const location = useLocation();
-  const isActive = location.pathname === to;
+  const isHomePage = location.pathname === '/';
+  const isHashLink = to.startsWith('#');
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (isHomePage && isHashLink) {
+      e.preventDefault();
+      const element = document.querySelector(to);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <Link
       to={to}
-      className={`block w-full md:w-auto text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors rounded-lg md:rounded-none ${
-        isActive ? 'bg-blue-50 md:bg-transparent text-blue-600 md:text-gray-900' : ''
-      } hover:bg-gray-50 md:hover:bg-transparent`}
+      onClick={handleClick}
+      className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100 ${
+        location.pathname === to ? 'text-blue-600' : 'text-gray-700'
+      }`}
     >
       {children}
     </Link>
